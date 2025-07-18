@@ -2,39 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* RBI Grade B Banking Academy Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Primary brand colors */
+    --primary: 0 100% 65%; /* Bright Red/Orange #FF4D4D */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary colors */
+    --secondary: 210 100% 18%; /* Deep Navy Blue #002B5C */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Background colors */
+    --background: 220 33% 98%; /* Soft Grayish Blue #F8F9FB */
+    --foreground: 0 0% 20%; /* Charcoal Gray #333333 */
+    
+    /* Accent colors */
+    --accent: 48 99% 50%; /* Golden Yellow #FEC601 */
+    --accent-foreground: 0 0% 20%;
+    
+    /* Card and component colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 20%;
+    
+    /* Popover colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --popover-foreground: 0 0% 20%;
+    
+    /* Muted colors */
+    --muted: 220 33% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Border and input */
+    --border: 0 0% 88%; /* Light Gray #E0E0E0 */
+    --input: 0 0% 94%;
+    --ring: 0 100% 65%;
+    
+    /* Footer */
+    --footer: 0 0% 11%; /* Dark Slate #1C1C1C */
+    --footer-foreground: 0 0% 95%;
+    
+    /* Destructive */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
 
@@ -101,5 +112,48 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  /* Button variants for the design system */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 font-bold px-6 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  /* Section styling */
+  .section-padding {
+    @apply py-16 px-4 md:px-8 lg:px-12;
+  }
+  
+  /* Card styling */
+  .feature-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105;
+  }
+  
+  /* Typography */
+  .heading-primary {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight;
+  }
+  
+  .heading-secondary {
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground;
+  }
+  
+  .heading-tertiary {
+    @apply text-xl md:text-2xl font-medium text-foreground;
   }
 }
