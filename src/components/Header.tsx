@@ -5,9 +5,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: 'Home', href: '#home' },
+    { label: 'Home', href: '/' },
     { label: 'Courses', href: '#courses' },
-    { label: 'RBI Grade B', href: '#rbi-grade-b' },
+    { label: 'RBI Grade B', href: '/' },
+    { label: 'SSC CGL', href: '/ssc-cgl' },
     { label: 'Online Classes', href: '#online-classes' },
     { label: 'Contact', href: '#contact' },
   ];
